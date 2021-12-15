@@ -11,6 +11,7 @@ public class CalculateInterest {
 		int principal = 0;
 		float monthlyInterest = 0;
 		int numberofPayment = 0;
+
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			System.out.println("Principal:");
@@ -29,7 +30,7 @@ public class CalculateInterest {
 			}
 			System.out.println("Enter value between 1 to 30:");
 		}
-		while (true) {
+		while (true) { 
 			System.out.print("Period (Years):");
 			byte years = scanner.nextByte();
 			if (years >= 1 && years <= 30) {
@@ -39,9 +40,9 @@ public class CalculateInterest {
 			System.out.println("Enter the valude yeat between 1 to 30");
 		}
 		double mortgage = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberofPayment))
-				/ (Math.pow(1 + monthlyInterest, numberofPayment));
-//	String mortgageFormatted = NumberFormat.getCurrencyInstance();
-		System.out.println("Mortgage:" + mortgage);
+				/ (Math.pow(1 + monthlyInterest, numberofPayment)-1);
+		 String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+		System.out.println("Mortgage : " + mortgageFormatted);
 
 	}
 
